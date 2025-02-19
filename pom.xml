@@ -11,8 +11,9 @@
   <name>sai ram arun</name>
   <url>http://maven.apache.org</url>
 
+  <!-- Set global properties for Java version and encoding -->
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>  <!-- Set Java version -->
+    <maven.compiler.source>11</maven.compiler.source>  <!-- Change to 17 if needed -->
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -31,11 +32,11 @@
     <finalName>MavenWebApp</finalName>
     
     <plugins>
-      <!-- Compiler plugin to ensure Java compatibility -->
+      <!-- Compiler plugin for Java compatibility -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.11.0</version>  <!-- Latest stable version -->
         <configuration>
           <source>${maven.compiler.source}</source>
           <target>${maven.compiler.target}</target>
@@ -47,6 +48,13 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.4.0</version>
+      </plugin>
+
+      <!-- Clean plugin to ensure a clean build -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.3.1</version>
       </plugin>
     </plugins>
   </build>
